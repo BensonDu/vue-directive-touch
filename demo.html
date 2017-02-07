@@ -116,19 +116,21 @@
     </div>
 
 </div>
-<script src="https://unpkg.com/vue@2.1.10/dist/vue.min.js"></script>
+
+<script src="//cdn.bootcss.com/vue/2.1.10/vue.min.js"></script>
 <script src="./dist/index.js"></script>
 <script>
+
     new Vue({
         el:'#demo',
-        data(){
+        data:function () {
             return {
                 event : ''
             }
         },
         methods:{
-            setEvent(e){
-                let self = this;
+            setEvent:function(e){
+                var self = this;
                 return function(){
                     self.event  = e;
                 }
