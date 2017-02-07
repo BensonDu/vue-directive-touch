@@ -1,0 +1,29 @@
+{
+  "name": "vue-directive-touch",
+  "version": "1.0.0",
+  "description": "Touch directive of vue 2.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BensonDu/vue-directive-touch.git"
+  },
+  "keywords": [
+    "vue",
+    "2.0",
+    "touch",
+    "mobile",
+    "v-touch"
+  ],
+  "author": "Benson <dubaoxing@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1"
+  }
+}

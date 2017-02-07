@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="utf-8">
+    <title>Vue 2.0 v-touch Demo</title>
+    <script>! function (e) {
+        "use strict";
+        var t = document.documentElement,
+                i = window.devicePixelRatio;
+        i = i >= 3 ? 3 : i >= 2 ? 2 : 1;
+        var n = 1 / i,
+                a = document.querySelector('meta[name="viewport"]'),
+                c = "initial-scale=" + n + ",maximum-scale=" + n + ",minimum-scale=" + n + ",user-scalable=no,width=device-width";
+        if (a) a.setAttribute("content", c);
+        else {
+            var o = '<meta name="viewport" content="' + c + '"/>';
+            document.write(o)
+        }
+        var r = function () {
+            var n = t.clientWidth;
+            n / i > 450 && (n = 450 * i);
+            var a = n / e * 100;
+            t.style.fontSize = a + "px"
+        };
+        r(), window.addEventListener("resize", r)
+    }(750)</script>
+    <style type="text/css">
+        html, body, div, span, p {
+            border: 0;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+            font-size: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+        }
+        * {
+            box-sizing: border-box;
+            font-size: 0;
+        }
+        .demo-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .demo-container .button {
+            position: relative;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background: #06c1ae;
+            border-radius: 50%;
+            margin-top: 2rem;
+        }
+        .demo-container .button p {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            font-size: 0.4rem;
+            margin-top: .7rem;
+        }
+        .demo-container .event-info {
+            width: 100%;
+            height: 4rem;
+            padding: .6rem;
+        }
+        .demo-container .event-info .text {
+            height: 100%;
+            width: 100%;
+            background: #fff;
+            padding: .4rem .6rem;
+            font-size: .2rem;
+        }
+        .demo-container .event-info .text h3 {
+            text-align: left;
+            color: #666;
+            font-size: .38rem;
+            margin: 0;
+        }
+        .demo-container .event-info .text p {
+            text-align: left;
+            color: #666;
+            font-size: .28rem;
+        }
+        .demo-container .event-info .text p span {
+            font-size: inherit;
+            color: #f66;
+        }
+    </style>
+</head>
+
+<body>
+<div id="demo" class="demo-container">
+
+    <div class="button"
+         v-touch:tap.self.once="setEvent('点击')"
+         v-touch:up="setEvent('上滑')"
+         v-touch:right="setEvent('右滑')"
+         v-touch:down="setEvent('下滑')"
+         v-touch:left="setEvent('左滑')"
+         v-touch:long="setEvent('长按')"
+    >
+        <p>按钮</p>
+    </div>
+
+    <div class="event-info">
+        <div class="text">
+            <p>支持事件指令包括:  <span> 点击、长按、左滑、右滑、上滑、下滑</span></p>
+            <br>
+            <p>当前事件类型为: <span v-text="event"></span></p>
+        </div>
+    </div>
+
+</div>
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.min.js"></script>
+<script src="./dist/index.js"></script>
+<script>
+    new Vue({
+        el:'#demo',
+        data(){
+            return {
+                event : ''
+            }
+        },
+        methods:{
+            setEvent(e){
+                let self = this;
+                return function(){
+                    self.event  = e;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
