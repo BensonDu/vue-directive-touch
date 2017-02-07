@@ -1,8 +1,8 @@
 {
   "name": "vue-directive-touch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Touch directive of vue 2.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/BensonDu/vue-directive-touch.git"
