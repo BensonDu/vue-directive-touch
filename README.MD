@@ -117,7 +117,7 @@ new Vue({
 > 例：<br>
 > 在 Vue 1.0 中可以实现以下自定义指令 <br>
 > v-touch="fun($index,param)" <br>
-> Vue 2.0 的指令机制会直接将其解析为 expression，也就是自定义指令中的 fun($index,param) 会被直接执行，传递生命周期中的值是 fun($index,param) 执行的结果；<br>
+> Vue 2.0 的指令机制会直接将其解析为 expression，也就是自定义指令中的 fun($index,param) 会被直接执行，传递到生命周期中的值是 fun($index,param) 执行的结果；<br>
 > Vue 2.0 相关机制更改的原因引用文档中的解释：" 有的情况下,你仍然需要对纯 DOM 元素进行底层操作,这时候就会用到自定义指令"，另外一个层面，也可以保持指令传递方法逻辑处理的统一；
 
 

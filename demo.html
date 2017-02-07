@@ -97,10 +97,10 @@
 <div id="demo" class="demo-container">
 
     <div class="button"
-         v-touch:tap.self.once="setEvent('点击')"
-         v-touch:up="setEvent('上滑')"
+         v-touch:tap="setEvent('点击')"
+         v-touch:up.prevent="setEvent('上滑')"
          v-touch:right="setEvent('右滑')"
-         v-touch:down="setEvent('下滑')"
+         v-touch:down.prevent="setEvent('下滑')"
          v-touch:left="setEvent('左滑')"
          v-touch:long="setEvent('长按')"
     >
