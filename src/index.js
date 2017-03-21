@@ -16,7 +16,7 @@
             let absv = Math.abs(v);
             let move = Math.sqrt(Math.pow(h,2) + Math.pow(v,2));
             switch (true){
-                case (during < 8):
+                case (during < 3):
                     break;
                 case (during > 300):
                     type = 'long';

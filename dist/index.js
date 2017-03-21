@@ -20,7 +20,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var absv = Math.abs(v);
             var move = Math.sqrt(Math.pow(h, 2) + Math.pow(v, 2));
             switch (true) {
-                case during < 8:
+                case during < 3:
                     break;
                 case during > 300:
                     type = 'long';
