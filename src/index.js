@@ -139,6 +139,8 @@
                     Helper.detachEvent(this,data.handler);
                     delete workSpace[key][type];
                 }
+                /* 点击穿透 */
+                if(isMobile)e.preventDefault();
             }
         }
     };
