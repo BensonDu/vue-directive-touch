@@ -139,8 +139,8 @@
                     Helper.detachEvent(this,data.handler);
                     delete workSpace[key][type];
                 }
-                /* 点击穿透 */
-                if(isMobile)e.preventDefault();
+                /* 阻止点击穿透及默认 Click 事件 */
+                e.preventDefault();
             }
         }
     };
