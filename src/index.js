@@ -139,18 +139,18 @@
                     Helper.detachEvent(this,data.handler);
                     delete workSpace[key][type];
                 }
-                /* 执行 Hook */
-                if (hook !== null) {
-                    hook(this,type,end);
+                /* 执行 afterEvent Hook */
+                if (afterEvent !== null) {
+                    afterEvent(this,type,end);
                 }
             }
         }
     };
-    let hook = null;
+    let afterEvent = null;
     let workSpace = {};
 
     vueTouch.install = function(Vue,options) {
-        if (options && options.hook && typeof options.hook === 'function') hook = options.hook;
+        if (options && options.afterEvent && typeof options.afterEvent === 'function') afterEvent = options.afterEvent;
         Vue.directive('touch',{
             bind(el,binding){
                 let type = binding.arg;

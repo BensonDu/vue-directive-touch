@@ -141,18 +141,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     Helper.detachEvent(this, data.handler);
                     delete workSpace[key][type];
                 }
-                /* 执行 Hook */
-                if (hook !== null) {
-                    hook(this, type, end);
+                /* 执行 afterEvent Hook */
+                if (afterEvent !== null) {
+                    afterEvent(this, type, end);
                 }
             }
         };
     };
-    var hook = null;
+    var afterEvent = null;
     var workSpace = {};
 
     vueTouch.install = function (Vue, options) {
-        if (options && options.hook && typeof options.hook === 'function') hook = options.hook;
+        if (options && options.afterEvent && typeof options.afterEvent === 'function') afterEvent = options.afterEvent;
         Vue.directive('touch', {
             bind: function bind(el, binding) {
                 var type = binding.arg;
