@@ -139,14 +139,18 @@
                     Helper.detachEvent(this,data.handler);
                     delete workSpace[key][type];
                 }
-                /* 阻止点击穿透及默认 Click 事件 */
-                e.preventDefault();
+                /* 执行 Hook */
+                if (hook !== null) {
+                    hook(this,type,end);
+                }
             }
         }
     };
+    let hook = null;
     let workSpace = {};
 
-    vueTouch.install = function(Vue) {
+    vueTouch.install = function(Vue,options) {
+        if (options && options.hook && typeof options.hook === 'function') hook = options.hook;
         Vue.directive('touch',{
             bind(el,binding){
                 let type = binding.arg;
