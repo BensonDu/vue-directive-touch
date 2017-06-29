@@ -133,7 +133,7 @@
                     return false;
                 }
                 /* 事件执行 */
-                type !== 'long' && method(e);
+                type !== 'long' && method(e, start, end);
                 /* 单次执行结束后释放事件及数据 */
                 if(modifiers.once){
                     Helper.detachEvent(this,data.handler);
