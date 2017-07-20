@@ -79,7 +79,7 @@ new Vue({
 			return function(event, start, end) {
 			    /*
 			    *   event 为事件实例
-			    *   start end 分别包含事件起始信息： X  --> X 坐标 | Y --> 坐标 | T --> 时间戳 
+			    *   start end 分别包含事件起始信息： X  --> 横坐标 | Y --> 纵坐标 | T --> 时间戳 
 			    *   index、item 为方法传参
 			    */
 			    
