@@ -61,11 +61,7 @@
         }
     };
     let vueTouch = {};
-    let isMobile = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-    if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone)/i)) {
-        isMobile = true;
-    }
-
+    let isMobile = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) || /(Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone)/i.test(navigator.userAgent);
     let modifierRules = function (dom,e, modifiers) {
         /* 禁止冒泡 */
         modifiers.stop && e.stopPropagation();

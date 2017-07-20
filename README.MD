@@ -76,9 +76,10 @@ new Vue({
 	methods : {
 	    /* 自定义指令方法 */
 		eventFun : function(index,item) {
-			return function(event) {
+			return function(event, start, end) {
 			    /*
 			    *   event 为事件实例
+			    *   start end 分别包含事件起始信息： X  --> X 坐标 | Y --> 坐标 | T --> 时间戳 
 			    *   index、item 为方法传参
 			    */
 			    
@@ -86,10 +87,10 @@ new Vue({
 		},
 		/* 原生 Vue 事件方法 */
 		orginalFun : function(index,item,event) {
-		    /*
-            *   event 为事件实例
-            *   index、item 为方法传参
-            */
+                    /*
+                     *   event 为事件实例
+                     *   index、item 为方法传参
+                     */
 		}
 		
 	}
@@ -110,7 +111,7 @@ new Vue({
 <br><br>
 
 ## 事件修饰符
-#####事件修饰符释义参照 Vue [官方文档](https://cn.vuejs.org/v2/guide/events.html#事件修饰符) <br><br><br>
+##### 事件修饰符释义参照 Vue [官方文档](https://cn.vuejs.org/v2/guide/events.html#事件修饰符) <br><br><br>
 
 ## Vue 1.0 与 2.0 自定义指令开发的差异:
 > Vue 2.0 版本自定义指令 API 相比 1.0 全部更改，在自定义指令开发层面完全不兼容，使用层面主要差异为："自定义指令方法的传参" <br>

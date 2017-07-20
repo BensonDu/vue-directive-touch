@@ -65,7 +65,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
     };
     var vueTouch = {};
-    var isMobile = 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    var isMobile = 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 || /(Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone)/i.test(navigator.userAgent);
     var modifierRules = function modifierRules(dom, e, modifiers) {
         /* 禁止冒泡 */
         modifiers.stop && e.stopPropagation();
