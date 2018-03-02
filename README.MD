@@ -63,7 +63,8 @@ new Vue({
 <ul>
 	<li 
 	    v-for = "(item,index) in list"
-		v-touch:tap = "eventFun(index,item)"
+		v-touch:tap = "eventFunWithParam(index,item)"
+		v-touch:tap = "eventFunNoParam"
 		@click = "orginalFun(index,item,$event)"
 	>
 	</li>
@@ -74,8 +75,8 @@ new Vue({
 new Vue({
 	el: "dom",
 	methods : {
-	    /* 自定义指令方法 */
-		eventFun : function(index,item) {
+	    /* 自定义指令方法: 附带参数 */
+		eventFunWithParam : function(index,item) {
 			return function(event, start, end) {
 			    /*
 			    *   event 为事件实例
@@ -85,6 +86,14 @@ new Vue({
 			    
 			}
 		},
+		/* 自定义指令方法： 无传参 */
+        eventFunNoParam : function(event, start, end) {
+              /*
+                *   event 为事件实例
+                *   start end 分别包含事件起始信息： X  --> 横坐标 | Y --> 纵坐标 | T --> 时间戳 
+                *   index、item 为方法传参
+                */
+        },
 		/* 原生 Vue 事件方法 */
 		orginalFun : function(index,item,event) {
                     /*
