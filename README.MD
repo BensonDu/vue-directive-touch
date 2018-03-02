@@ -87,13 +87,13 @@ new Vue({
 			}
 		},
 		/* 自定义指令方法： 无传参 */
-        eventFunNoParam : function(event, start, end) {
-              /*
-                *   event 为事件实例
-                *   start end 分别包含事件起始信息： X  --> 横坐标 | Y --> 纵坐标 | T --> 时间戳 
-                *   index、item 为方法传参
-                */
-        },
+                eventFunNoParam : function(event, start, end) {
+                      /*
+                        *   event 为事件实例
+                        *   start end 分别包含事件起始信息： X  --> 横坐标 | Y --> 纵坐标 | T --> 时间戳 
+                        *   index、item 为方法传参
+                        */
+                },
 		/* 原生 Vue 事件方法 */
 		orginalFun : function(index,item,event) {
                     /*
