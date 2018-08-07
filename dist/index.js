@@ -143,7 +143,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
                 /* 执行 afterEvent Hook */
                 if (afterEvent !== null) {
-                    afterEvent(this, type, end);
+                    afterEvent(this, type, e);
                 }
             }
         };
