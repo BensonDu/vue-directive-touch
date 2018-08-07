@@ -1,6 +1,6 @@
 {
   "name": "vue-directive-touch",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Touch directive of vue 2.0",
   "main": "dist/index.js",
   "repository": {
