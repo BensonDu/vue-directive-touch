@@ -18,7 +18,7 @@
             switch (true){
                 case (during < 3):
                     break;
-                case (during > 300):
+                case (during > 500 && move < 20):
                     type = 'long';
                     break;
                 case (move < 10):
