@@ -28,16 +28,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 case move < 10:
                     type = 'tap';
                     break;
-                case h > 0 && absv < 20:
+                case h > 0 && absv < 35:
                     type = 'right';
                     break;
-                case h < 0 && absv < 20:
+                case h < 0 && absv < 35:
                     type = 'left';
                     break;
-                case v > 0 && absh < 20:
+                case v > 0 && absh < 45:
                     type = 'down';
                     break;
-                case v < 0 && absh < 20:
+                case v < 0 && absh < 45:
                     type = 'up';
                     break;
                 default:
