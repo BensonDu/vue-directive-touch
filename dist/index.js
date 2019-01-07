@@ -34,10 +34,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 case h < 0 && absv < 35:
                     type = 'left';
                     break;
-                case v > 0 && absh < 45:
+                case v > 0 && absv > absh:
                     type = 'down';
                     break;
-                case v < 0 && absh < 45:
+                case v < 0 && absv > absh:
                     type = 'up';
                     break;
                 default:
