@@ -8,7 +8,7 @@
         },
         getType(start,end){
             let type = null;
-            let ratio = window.devicePixelRatio;
+            let ratio = Math.min(2, window.devicePixelRatio);
             let during = end.T - start.T;
             let h = (end.X - start.X)/ratio;
             let v = (end.Y - start.Y)/ratio;
@@ -21,7 +21,7 @@
                 case (during > 500 && move < 20):
                     type = 'long';
                     break;
-                case (move < 10):
+                case (move < 6):
                     type = 'tap';
                     break;
                 case (h > 0 && absv < 35):

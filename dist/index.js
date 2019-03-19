@@ -12,7 +12,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         },
         getType: function getType(start, end) {
             var type = null;
-            var ratio = window.devicePixelRatio;
+            var ratio = Math.min(2, window.devicePixelRatio);
             var during = end.T - start.T;
             var h = (end.X - start.X) / ratio;
             var v = (end.Y - start.Y) / ratio;
@@ -25,7 +25,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 case during > 500 && move < 20:
                     type = 'long';
                     break;
-                case move < 10:
+                case move < 6:
                     type = 'tap';
                     break;
                 case h > 0 && absv < 35:
